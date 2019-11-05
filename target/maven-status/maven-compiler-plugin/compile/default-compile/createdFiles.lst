@@ -1,0 +1,8 @@
+io\thetechthirsty\springsecurityjwt\model\AuthenticationResponse.class
+io\thetechthirsty\springsecurityjwt\model\AuthenticationRequest.class
+io\thetechthirsty\springsecurityjwt\SecurityConfig.class
+io\thetechthirsty\springsecurityjwt\util\JwtUtil.class
+io\thetechthirsty\springsecurityjwt\api\HelloResource.class
+io\thetechthirsty\springsecurityjwt\service\MyUserDetailsService.class
+io\thetechthirsty\springsecurityjwt\SpringSecurityJwtApplication.class
+io\thetechthirsty\springsecurityjwt\filters\JwtRequestFilter.class
