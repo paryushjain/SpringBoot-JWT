@@ -25,6 +25,9 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private JwtRequestFilter jwtRequestFilter;
 
 	@Autowired
+	private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
+
+	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(myUserDetailsService).passwordEncoder(passwordEncoder());
 	}
@@ -45,7 +48,8 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 		httpSecurity.csrf().disable().authorizeRequests()
 				.antMatchers("/v2/api-docs", "/configuration/ui", "/swagger-resources/**", "/configuration/security",
 						"/swagger-ui.html", "/webjars/**", "/v1/api/authenticate")
-				.permitAll().anyRequest().authenticated().and().sessionManagement()
+				.permitAll().anyRequest().authenticated().and().exceptionHandling()
+				.authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
