@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,7 +19,7 @@ import io.thetechthirsty.springsecurityjwt.util.JwtUtil;
 
 @RestController
 @RequestMapping("/v1/api")
-public class HelloResource {
+public class AuthenticateResource {
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
@@ -35,7 +35,7 @@ public class HelloResource {
 		return "Hello World!";
 	}
 
-	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
+	@PostMapping(value = "/authenticate")
 	public ResponseEntity<?> createToken(@RequestBody AuthenticationRequest authenticateRequest) throws Exception {
 
 		authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authenticateRequest.getUsername(),

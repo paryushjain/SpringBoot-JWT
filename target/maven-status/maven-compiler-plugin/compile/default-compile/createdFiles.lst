@@ -1,5 +1,4 @@
 io\thetechthirsty\springsecurityjwt\model\AuthenticationRequest.class
-io\thetechthirsty\springsecurityjwt\api\HelloResource.class
 swagger\codegen\api\EmployeeApi.class
 io\thetechthirsty\springsecurityjwt\filters\JwtRequestFilter.class
 io\thetechthirsty\springsecurityjwt\model\AuthenticationResponse.class

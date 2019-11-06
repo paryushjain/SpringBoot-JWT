@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,8 +17,8 @@ import io.thetechthirsty.springsecurityjwt.service.MyUserDetailsService;
 import io.thetechthirsty.springsecurityjwt.util.JwtUtil;
 
 @RestController
-@RequestMapping(&quot;/api&quot;)
-<span class="fc" id="L22">public class HelloResource {</span>
+@RequestMapping(&quot;/v1/api&quot;)
+<span class="nc" id="L21">public class HelloResource {</span>
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
@@ -32,18 +31,18 @@ import io.thetechthirsty.springsecurityjwt.util.JwtUtil;
 
 	@GetMapping(value = &quot;/hello&quot;)
 	public String hello() {
-<span class="nc" id="L35">		return &quot;Hello World!&quot;;</span>
+<span class="nc" id="L34">		return &quot;Hello World!&quot;;</span>
 	}
 
 	@RequestMapping(value = &quot;/authenticate&quot;, method = RequestMethod.POST)
 	public ResponseEntity&lt;?&gt; createToken(@RequestBody AuthenticationRequest authenticateRequest) throws Exception {
 
-<span class="nc" id="L41">		authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authenticateRequest.getUsername(),</span>
-<span class="nc" id="L42">				authenticateRequest.getPassword()));</span>
+<span class="nc" id="L40">		authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authenticateRequest.getUsername(),</span>
+<span class="nc" id="L41">				authenticateRequest.getPassword()));</span>
 
-<span class="nc" id="L44">		final UserDetails userDetails = myUserDetailsService.loadUserByUsername(authenticateRequest.getUsername());</span>
-<span class="nc" id="L45">		final String jwt = jwtUtil.generateToken(userDetails);</span>
-<span class="nc" id="L46">		return ResponseEntity.ok(new AuthenticationResponse(jwt));</span>
+<span class="nc" id="L43">		final UserDetails userDetails = myUserDetailsService.loadUserByUsername(authenticateRequest.getUsername());</span>
+<span class="nc" id="L44">		final String jwt = jwtUtil.generateToken(userDetails);</span>
+<span class="nc" id="L45">		return ResponseEntity.ok(new AuthenticationResponse(jwt));</span>
 	}
 
 }

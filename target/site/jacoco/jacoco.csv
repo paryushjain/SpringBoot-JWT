@@ -1,11 +1,9 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-spring-security-jwt,io.thetechthirsty.springsecurityjwt.util,JwtUtil,90,6,4,0,13,2,10,1,8,1
+spring-security-jwt,io.thetechthirsty.springsecurityjwt.util,JwtUtil,91,6,4,0,13,2,10,1,8,1
 spring-security-jwt,io.thetechthirsty.springsecurityjwt.model,AuthenticationResponse,9,0,0,0,4,0,2,0,2,0
 spring-security-jwt,io.thetechthirsty.springsecurityjwt.model,AuthenticationRequest,26,0,0,0,12,0,6,0,6,0
-spring-security-jwt,swagger.codegen.api,EmployeeApi,10,0,0,0,2,0,2,0,2,0
-spring-security-jwt,io.thetechthirsty.springsecurityjwt,SecurityConfig,0,70,0,0,0,11,0,5,0,5
-spring-security-jwt,io.thetechthirsty.springsecurityjwt,SpringSecurityJwtApplication,5,3,0,0,2,1,1,1,1,1
+spring-security-jwt,io.thetechthirsty.springsecurityjwt,SecurityConfig,0,73,0,0,0,12,0,5,0,5
+spring-security-jwt,io.thetechthirsty.springsecurityjwt,SpringSecurityJwtApplication,8,0,0,0,3,0,2,0,2,0
 spring-security-jwt,io.thetechthirsty.springsecurityjwt.filters,JwtRequestFilter,63,3,10,0,16,1,6,1,1,1
-spring-security-jwt,io.thetechthirsty.springsecurityjwt.api,HelloResource,30,3,0,0,6,1,2,1,2,1
-spring-security-jwt,swagger.codegen.api.model,Employee,312,0,22,0,70,0,37,0,26,0
-spring-security-jwt,io.thetechthirsty.springsecurityjwt.service,MyUserDetailsService,9,3,0,0,1,1,1,1,1,1
+spring-security-jwt,io.thetechthirsty.springsecurityjwt.api,HelloResource,33,0,0,0,7,0,3,0,3,0
+spring-security-jwt,io.thetechthirsty.springsecurityjwt.service,MyUserDetailsService,18,3,2,0,3,1,2,1,1,1

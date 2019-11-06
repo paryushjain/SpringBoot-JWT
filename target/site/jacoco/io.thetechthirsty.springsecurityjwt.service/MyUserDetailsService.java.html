@@ -13,7 +13,12 @@ import org.springframework.stereotype.Service;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-<span class="nc" id="L16">		return new User(&quot;foo&quot;, &quot;$2a$10$PqbwFOkdK.X1gZ3dxmcgwuh8w7jeC.3uhBMkADNEYuf4avBVN57B2&quot;, new ArrayList&lt;&gt;());</span>
+<span class="nc bnc" id="L16" title="All 2 branches missed.">		if(username.equals(&quot;foo&quot;)) {</span>
+<span class="nc" id="L17">			return new User(&quot;foo&quot;, &quot;$2a$10$PqbwFOkdK.X1gZ3dxmcgwuh8w7jeC.3uhBMkADNEYuf4avBVN57B2&quot;, new ArrayList&lt;&gt;());</span>
+		}else {
+<span class="nc" id="L19">			throw new UsernameNotFoundException(&quot;User name not found&quot;);</span>
+		}
+		
 	}
 
 }

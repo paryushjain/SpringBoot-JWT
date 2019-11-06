@@ -12,7 +12,7 @@ import javax.validation.constraints.*;
 /**
  * Employee
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-11-06T14:56:23.883+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-11-06T17:20:56.256+05:30")
 
 public class Employee  implements Serializable {
   private static final long serialVersionUID = 1L;

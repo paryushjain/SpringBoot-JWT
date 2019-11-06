@@ -26,7 +26,7 @@ import io.thetechthirsty.springsecurityjwt.filters.JwtRequestFilter;
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-<span class="fc" id="L29">		auth.userDetailsService(myUserDetailsService);</span>
+<span class="fc" id="L29">		auth.userDetailsService(myUserDetailsService).passwordEncoder(passwordEncoder());</span>
 <span class="fc" id="L30">	}</span>
 
 	@Bean
@@ -44,7 +44,7 @@ import io.thetechthirsty.springsecurityjwt.filters.JwtRequestFilter;
 	public void configure(HttpSecurity httpSecurity) throws Exception {
 <span class="fc" id="L45">		httpSecurity.csrf().disable().authorizeRequests()</span>
 <span class="fc" id="L46">				.antMatchers(&quot;/v2/api-docs&quot;, &quot;/configuration/ui&quot;, &quot;/swagger-resources/**&quot;, &quot;/configuration/security&quot;,</span>
-						&quot;/swagger-ui.html&quot;, &quot;/webjars/**&quot;, &quot;/authenticate&quot;)
+<span class="fc" id="L47">						&quot;/swagger-ui.html&quot;, &quot;/webjars/**&quot;, &quot;/v1/api/authenticate&quot;)</span>
 <span class="fc" id="L48">				.permitAll().anyRequest().authenticated().and().sessionManagement()</span>
 <span class="fc" id="L49">				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);</span>
 <span class="fc" id="L50">		httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);</span>
