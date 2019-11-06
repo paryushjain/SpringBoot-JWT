@@ -18,6 +18,7 @@ import io.thetechthirsty.springsecurityjwt.service.MyUserDetailsService;
 import io.thetechthirsty.springsecurityjwt.util.JwtUtil;
 
 @RestController
+@RequestMapping("/api")
 public class HelloResource {
 
 	@Autowired
