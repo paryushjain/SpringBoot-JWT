@@ -18,7 +18,7 @@ import io.thetechthirsty.springsecurityjwt.service.MyUserDetailsService;
 import io.thetechthirsty.springsecurityjwt.util.JwtUtil;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/v1/api")
 public class HelloResource {
 
 	@Autowired
@@ -30,21 +30,16 @@ public class HelloResource {
 	@Autowired
 	private JwtUtil jwtUtil;
 
-	@GetMapping(value="/hello")
+	@GetMapping(value = "/hello")
 	public String hello() {
 		return "Hello World!";
 	}
 
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
-	public ResponseEntity<?> createToken(@RequestBody AuthenticationRequest authenticateRequest) throws Exception{
+	public ResponseEntity<?> createToken(@RequestBody AuthenticationRequest authenticateRequest) throws Exception {
 
-		try {
-			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-					authenticateRequest.getUsername(), authenticateRequest.getPassword()));
-		} catch (AuthenticationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authenticateRequest.getUsername(),
+				authenticateRequest.getPassword()));
 
 		final UserDetails userDetails = myUserDetailsService.loadUserByUsername(authenticateRequest.getUsername());
 		final String jwt = jwtUtil.generateToken(userDetails);
